@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ekart--product--item" [appAvalability]="!(child.inventory >= 70)">
+        <div class="ekart-wishlist-sale-container">
+            <div class="ekart-add-to-wishlist">
+                <p class="fa fa-heart-o" aria-hidden="true"></p>
+            </div>
+            <div class="ekart-on-sale-tag">{{child.items_remain + '%' + ' ' + 'OFF'}}</div>
+        </div>
+        <div class="ekart--product--image">
+            <img [src]="child.image_Url" class="ekart--product--image" alt="">
+        </div>
+        <div class="ekart--add--to--price">
+            {{child.price}}
+        </div>
+        <div class="ekart--product--name">{{child.name}}</div>
+        <div class="ekart--product--category">{{child.gender + "  " + child.category + "  " + child.brand}}</div>
+        <div class="ekart--product--available-colors">{{child.color}} </div>
+        <div class="ekart--product--available-colors"
+            [ngStyle]="{fontWeight: 'bold', color: child.inventory >= 70 ? 'black':'red'}">
+            {{child.inventory >= 70 ? "Available" : "Not Available"}} </div>
+    </div>
+</body>
+</html>

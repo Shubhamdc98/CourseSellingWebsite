@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ekart--search--product">
+        <!-- <input class="ekart-search-product-input" (input)="changeSearch($event)"> -->
+        <input class="ekart-search-product-input" #instahash>
+         <!-- [ngClass]="{'btn':search, 'btn-search': search, 'btn-search-disabled': !search,}" [disabled]="!search" -->
+        <button class="btn btn-search" (click)="changeSearch()">Search</button>
+    </div>
+    
+        <div class="ekart-search-result-for">
+            <p><strong *ngIf="search != '' ">Search result for:</strong>{{search}}</p>
+        </div>
+        
+        <!-- <div class="ekart-product-container-header"><h2>Shoes</h2></div>
+        <div class="ekart--products--container"></div> -->
+</body>
+</html>

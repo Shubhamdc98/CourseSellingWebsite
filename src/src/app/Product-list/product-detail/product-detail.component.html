@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ekart--product--details--info scroll" [appAvalability]="!(product.inventory >= 70)">
+        <div class="ekart-product-detail-close">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="ekart-product-detail-image">
+            <img src={{product.image_Url}} alt="">
+        </div>
+    
+        <div class="ekart-product-detail">
+            <div class="ekart-product-detail-name">
+                <h2>{{product.name}}</h2>
+            </div>
+            <div class="ekart-product-detail-gbc">
+                <!-- <span SetBackground [backColor]="'#282828'" [color]="'green'">{{product.brand}}</span>
+                <span SetBackground [backColor]="'#282828'" [color]="'green'">{{product.category}}</span>
+                <span SetBackground [backColor]="'#282828'" [color]="'green'">{{product.category}}</span> -->
+                <span [SetBackground]="{color : 'pink', backColor : 'black'}"  >{{product.brand}}</span>
+                <span [SetBackground]="{color : 'pink', backColor : 'black'}"  >{{product.category}}</span>
+                <span [SetBackground]="{color : 'pink', backColor : 'black'}"  >{{product.category}}</span>
+
+            </div>
+    
+            <div class="ekart-product-detail-price">
+                <p>
+                    <b>price each pair:</b>
+                    <span style="background-color : red; color: white;">
+                    <s>$699</s></span>
+                    <span style="background-color : green; color: white;">
+                    {{product.price}}</span>(inclusive of all taxes)
+                </p>
+            </div>
+    
+            <div class="ekart-product-detail-size">
+                <div style="padding : 5px 0px ; border-bottom: #ccc 2px solid;">
+                <h4 style="color: #282828;">Available Size:</h4></div>
+                <div style="margin-top: 20px;">
+                    <span class="ekart-product-detail-available-size">6</span>
+                    <span class="ekart-product-detail-available-size">7</span>
+                    <span class="ekart-product-detail-available-size">8</span>
+                    <span class="ekart-product-detail-available-size">9</span>
+                </div>
+            </div>
+    
+            <div class="ekart-product-detail-color">
+                <div style="padding : 5px 0px ; border-bottom: #ccc 2px solid;">
+                <h4>Available Color:</h4></div>
+                <div style="margin-top: 20px;">
+                    <span class="ekart-product-detail-available-color" style="background-color:green ;"></span>
+                    <span class="ekart-product-detail-available-color" style="background-color:blue ;"></span>
+                    <span class="ekart-product-detail-available-color" style="background-color:red ;"></span>
+                    <span class="ekart-product-detail-available-color" style="background-color:brown ;"></span>
+                </div>
+            </div>
+    
+            <div class="ekart-product-detail-desc">
+                <div style="padding : 5px 0px ; border-bottom: #ccc 2px solid;">
+                    <h4>Available Description:</h4></div>
+                    <div style="margin-top: 20px;">
+                    <p>{{product.description}}</p>
+                    <p>{{product.inventory}}</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="ekart-product-detail-add-to-cart">
+            <button class="btn-add-to-cart" *ngIf="product.inventory >= 70; else inform" appHover>ADD TO CART</button>
+            <ng-template #inform>
+                <button class="btn-add-to-cart" appHover>NOTIFY ME</button>
+            </ng-template>
+        </div>
+    </div>
+    
+    <div class="overlay"></div>
+</body>
+</html>

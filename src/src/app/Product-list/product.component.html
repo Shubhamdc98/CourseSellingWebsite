@@ -1,0 +1,59 @@
+<div class="ekart--product--container">
+<!-- <img [src]="product.pImg" alt="">
+<p>Name: {{product.name}}</p>
+<p>Price: {{'$ ' + product.price}}</p>
+<p>Color: {{product.color}}</p>
+<p>Discount: {{product.discount + "%"}}</p>
+<p>Final Price: {{getDiscount().toFixed(2)}}</p>
+<p>{{product.inStock > 0 ? "only " + product.inStock + " left in stock":"Not in Stock"}}</p>
+ <button style="margin: 10px 10px; padding: 2px 10px; border-radius: 10px;" 
+ [disabled]="(product.inStock === 0)">Buy Now</button>
+<div class="cart">
+    <div style="background-color: cadetblue; border-radius: 10px;">Add to Cart</div>
+    <button class="btn" (click)="toDecrease()"><b>--</b></button>
+    <span>{{" " + addToCart + " "}}</span>
+    <button class="btn" (click)="toIncrease()"><b>--</b></button>
+</div> -->
+
+
+
+
+
+<!-- <input type="text" [value]="name" (input)="getValue($event)">
+<p>input:{{name}}</p> -->
+<!-- <p>Final Price: {{"$" + product.price * (100-product.discount)/100  }}</p>// -->
+
+<!-- <button [disabled]="!(product.inStock)">Buy Now</button>// -->
+
+<!-- <input type="text" [value]="name" [arial-hidden]="">// -->
+
+<!-- <input type="text" [value]="name" [attr.arial-hidden]="(product.name)">// -->
+ <!-- G8002: Can't bind to 'arial-hidden' since it isn't a known property of 'input'.
+Hidden, Disabled, Checked -> String interpolation would not work -->
+
+<app-search (onSearchText)="ReceivedText($event)"></app-search>
+
+<app-container [valueGained]="generatedValue" #ContainerComponent></app-container>
+<app-product-detail *ngIf="ContainerComponent.SelectedProduct" [ContainerRef]="ContainerComp"></app-product-detail>
+
+<div class="ekart-featured-product">
+    <div class="ekart-featured-product-heading">
+        <h2 class="product-heading">Latest Arrival in Popular Brand</h2>
+    </div>
+    <featured-product>
+        <h3 class="heading">New Arrival in Bags</h3>
+        <button class="btn btn-search">New Bags</button>
+    </featured-product>
+    <featured-product>
+        <h3 class="heading">New Arrival in Jacket</h3>
+        <button class="btn btn-search">New Jackets</button>
+    </featured-product>
+    <featured-product>
+        <h3 class="heading">New Arrival in Sneakers</h3>
+        <button class="btn btn-search">New Sneakers</button>
+    </featured-product>
+
+
+</div>
+</div>
+
